@@ -8,4 +8,4 @@ path="etc/nginx/conf.d/"
 
 #Replace old server name by the new name
 
-sed -i -s -c -u "s/$old_name/$new_name/g" "$path"*.conf
+sed -i "s/$old_name/$new_name/g" "$path"*.conf
