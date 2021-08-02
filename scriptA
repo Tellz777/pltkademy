@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Initialize variables
+
+old_name="nginx-03.com"
+new_name="nginx-01.com"
+path="etc/nginx/conf.d/" 
+
+#Replace old server name by the new name
+
+sed -i -s -c -u "s/$old_name/$new_name/g" "$path"*.conf
