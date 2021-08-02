@@ -1,11 +1,18 @@
 #!/bin/bash
 
-#Initialize variables
+#Variables
 
 old_name="nginx-01.com"
 new_name="nginx-02.com"
-path="etc/nginx/conf.d/" 
+path="etc/nginx/conf.d/"
 
-#Replace old server name by the new name
+#Creating 100 files with "old" server name
 
-sed -i "s/$old_name/$new_name/g" $path*.conf
+mkdir -p etc/nginx/conf.d/
+cd etc/nginx/conf.d/
+touch server_{1..100}.conf
+echo 'nginx-01.com' | tee *.conf
+
+#Replace old server name with new server name
+
+sed -i "s/old_name/new_name/g" $path*.conf
