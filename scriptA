@@ -15,4 +15,4 @@ echo 'nginx-01.com' | tee *.conf
 
 #Replace old server name with new server name
 
-sed -i "s/old_name/new_name/g" $path*.conf
+sed -i "s/$old_name/$new_name/g" $path*.conf
